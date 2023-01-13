@@ -1,0 +1,79 @@
+<!--========================== Exercise 2.3 - Values and Variables ==========================
+An HTML and JavaScript project utilizing:
+- Variables and HTML binding
+
+Code referenced from w3schools 
+- https://www.w3schools.com/js/js_variables.asp -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WEB 231 - Enterprise JavaScript I</title>
+        <link href="../site.css" type="text/css" rel="stylesheet">
+        <link href="reyes-payroll.css" type="text/css" rel="stylesheet">  
+    </head>
+    <body>
+        <h1 id="payroll-header">Payroll System</h1>
+        <h3>Employee Record 1</h3>
+        <ul>
+            <li id="txtFirstNameDonald"></li>
+            <li id="txtLastNameDuck"></li>
+            <li id="txtAddressDonald"></li>
+            <li id="txtHireDateDonald"></li>
+            <li id="txtPayRateDonald"></li>
+        </ul>
+        <h3>Employee Record 2</h3>
+        <ul>
+            <li id="txtFirstNameMinnie"></li>
+            <li id="txtLastNameMinnie"></li>
+            <li id="txtAddressMinnie"></li>
+            <li id="txtHireDateMinnie"></li>
+            <li id="txtPayRateMinnie"></li>
+        </ul>
+        <h3>Employee Record 3</h3>
+        <ul>
+            <li id="txtFirstNameMickey"></li>
+            <li id="txtLastNameMickey"></li>
+            <li id="txtAddressMickey"></li>
+            <li id="txtHireDateMickey"></li>
+            <li id="txtPayRateMickey"></li>
+        </ul>
+        <script>
+            const firstNameDonald = "Donald";
+            const lastNameDonald = "Duck";
+            const addressDonald = "123 Lake Buena Vista Drive";
+            const hireDateDonald = new Date("06/09/2020");
+            const payRateDonald = 18.99;
+
+            document.getElementById("txtFirstNameDonald").innerHTML = firstNameDonald; 
+            document.getElementById("txtLastNameDuck").innerHTML = lastNameDonald; 
+            document.getElementById("txtAddressDonald").innerHTML = addressDonald; 
+            document.getElementById("txtHireDateDonald").innerHTML = hireDateDonald.toLocaleDateString("en-US"); 
+            document.getElementById("txtPayRateDonald").innerHTML = payRateDonald.toFixed(1); 
+
+            const firstNameMinnie = "Minnie";
+            const lastNameMinnie = "Mouse";
+            const addressMinnie = "165 Cherry Drive";
+            const hireDateMinnie = new Date("11/18/2020");
+            const payRateMinnie = 25.58;
+
+            document.getElementById("txtFirstNameMinnie").innerHTML = firstNameMinnie; 
+            document.getElementById("txtLastNameMinnie").innerHTML = lastNameMinnie; 
+            document.getElementById("txtAddressMinnie").innerHTML = addressMinnie; 
+            document.getElementById("txtHireDateMinnie").innerHTML = hireDateMinnie.toLocaleDateString("en-US"); 
+            document.getElementById("txtPayRateMinnie").innerHTML = payRateMinnie.toFixed(1); 
+
+            const firstNameMickey = "Mickey";
+            const lastNameMickey = "Mouse";
+            const addressMickey = "131 Disney Drive";
+            const hireDateMickey = new Date("11/09/2020");
+            const payRateMickey = 50.19;
+           
+            document.getElementById("txtFirstNameMickey").innerHTML = firstNameMickey; 
+            document.getElementById("txtLastNameMickey").innerHTML = lastNameMickey; 
+            document.getElementById("txtAddressMickey").innerHTML = addressMickey; 
+            document.getElementById("txtHireDateMickey").innerHTML = hireDateMickey.toLocaleDateString("en-US"); 
+            document.getElementById("txtPayRateMickey").innerHTML = payRateMickey.toFixed(1); 
+        </script>
+        <a href="../index.html" class="return-home">Return</a>
+    </body>
+</html>
