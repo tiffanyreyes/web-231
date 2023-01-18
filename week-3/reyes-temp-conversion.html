@@ -1,0 +1,44 @@
+<!--========================== Exercise 3.2 - Temperature Conversion App ==========================
+An HTML and JavaScript project utilizing:
+- Buttons with onclick alerts
+- HTML page load
+
+Code referenced from w3schools 
+- https://www.w3schools.com/jsref/prop_text_value.asp
+- https://www.w3schools.com/jsref/event_onclick.asp
+- https://www.w3schools.com/howto/howto_js_temperature_converter.asp -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WEB 231 - Enterprise JavaScript I</title>
+        <link href="../site.css" type="text/css" rel="stylesheet">
+        <link href="reyes-temp-conversion.css" type="text/css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1 class="app-header">Welcome to the Temperature Conversion App!</h1>
+        <div class="card">
+            <div class="card-title">Fahrenheit to Celsius Converter</div>
+            
+            <p>
+            <label>Fahrenheit value:</label>
+            <input id="txtFahrenheit" type="text">
+            </p>
+
+            <button onclick="myFunction()">Convert Temperature</button>
+        </div>
+        <br>
+        <div class="card card-celsius">
+            <div class="card-title">Conversion Results</div>
+            <span id="txtCelsius"></span>
+        </div>
+        
+        <script>
+            function myFunction() {
+                const fahrenheit = document.getElementById("txtFahrenheit").value
+                document.getElementById("txtCelsius").innerHTML = ((parseFloat(fahrenheit) - 32) / 1.8).toFixed(2)
+            }
+        </script>
+        <div class="link-card"><a href="../index.html" class="return-home">Return</a></div>
+    </body>
+</html>
