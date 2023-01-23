@@ -1,0 +1,51 @@
+<!--========================== Exercise 4.2 - Number Guessing Game ==========================
+An HTML and JavaScript project.
+
+Code referenced from w3schools 
+- https://www.w3schools.com/js/js_if_else.asp
+- https://www.w3schools.com/js/js_random.asp -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WEB 231 - Enterprise JavaScript I</title>
+        <link href="../site.css" type="text/css" rel="stylesheet">
+        <link href="reyes-number-game.css" type="text/css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1 class="app-header">Welcome to the numbers game!</h1>
+        <div class="card-pick">
+            <div class="card-title">Pick a number between 1 and 10</div>
+            
+            <p>
+            <label>Guess the number:</label>
+            <input id="txtMyNumber" type="text">
+            </p>
+
+            <button id="btnSubmit" onclick="myFunction()">Submit</button>
+        </div>
+        <br>
+        <div class="card-results">
+            <div class="card-title">Results</div>
+                <span id="txtMyResults"></span>
+        </div>
+        
+        <script>
+            const txtMyResults = document.getElementById("txtMyResults")
+            const txtResults = Math.floor((Math.random() * 10) + 1);
+
+            function myFunction() {
+                const myNumber = document.getElementById("txtMyNumber").value;
+
+                if (myNumber > txtResults) {
+                    txtMyResults.innerHTML = "The number is less than " + myNumber + ".";
+                } else if (myNumber < txtResults) {
+                    txtMyResults.innerHTML = "The number is greater than " + myNumber + ".";
+                } else {
+                    txtMyResults.innerHTML = "Congratulations! You picked the correct number!";
+                }
+            }
+        </script>
+        <div class="link-card"><a href="../index.html" class="return-home">Return</a></div>
+    </body>
+</html>

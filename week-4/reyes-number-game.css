@@ -1,0 +1,48 @@
+body {
+    font-family: 'Oswald', Verdana, Arial, sans-serif;
+    font-size: 28px;
+}
+
+h1.app-header {
+    border: none;
+    text-align: center;
+    font-size: 28px;
+}
+
+#txtMyNumber {
+    height: 28px;
+    font-size: 28px;
+}
+
+button {
+    background-color: #4F3674;
+    border: none;
+    color: white;
+    padding: 15px 64px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+div.card-pick, div.card-results {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: auto;
+    width: 700px;
+    padding: 20px;
+}
+
+div.card-results {
+    text-align: center;
+}
+
+div.card-title {
+    text-align: center;
+    color: #3C275A;
+}
+
+.link-card {
+    margin: auto;
+    width: 740px;
+    padding-top: 20px;
+}
