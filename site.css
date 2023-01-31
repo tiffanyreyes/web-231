@@ -15,6 +15,10 @@ h1.default, h2.default, h3.default, h4.default {
     padding: 10px;
 }
 
+.drop-down-menu {
+    font-size: 28px;
+}
+
 li {
     color: #453674;
 }

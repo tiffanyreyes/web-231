@@ -1,0 +1,78 @@
+<!--========================== Exercise 5.2 - Sequence Game ==========================
+An HTML and JavaScript project.
+
+Code referenced from w3schools 
+- https://www.w3schools.com/js/js_if_else.asp
+- https://www.w3schools.com/jsref/jsref_while.asp
+- https://www.w3schools.com/jsref/jsref_for.asp -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WEB 231 - Enterprise JavaScript I</title>
+    <link href="../site.css" type="text/css" rel="stylesheet">
+    <link href="reyes-sequence-game.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="app-header">Welcome to the sequence game!</h1>
+    <div class="card-select">
+        <div class="card-title">Sequence Selection Form</div>
+        <p>
+        <label>Choose a number sequence:</label>
+        <select class="drop-down-menu" name="types" id="sequence">
+            <option value="select">--Select--</option>
+            <option value="fibonacci">Fibonacci Sequence</option>
+            <option value="even">Even Numbers</option>
+            <option value="odd">Odd Numbers</option>
+        </select>
+        </p>
+        <button id="btnDisplaySequence" onclick="myFunction()">Display Sequence</button>
+    </div>
+    <br>
+    <div class="card-sequence">
+        <div class="card-title">Sequence Results</div>
+        <span id="txtMySequence"></span>
+    </div>
+
+    <script>
+        const txtMySequence = document.getElementById("txtMySequence")
+
+        function myFunction() {
+            const mySequence = document.getElementById("sequence").value;    
+
+            if (mySequence == "fibonacci") {
+                let num1 = 0;
+                let num2 = 1;
+                let next = 0;
+
+                let fibonacciSequenceText = "";
+
+                while (num1 < 40) {
+                    fibonacciSequenceText += num1 + ", ";
+                    next = num1 + num2;
+                    num1 = num2;
+                    num2 = next;
+                }
+
+                txtMySequence.innerHTML = fibonacciSequenceText.slice(0, -2);
+            } else if (mySequence == "even") {
+                let evenNumberText = "";
+                for (let num1 = 2; num1 <= 20; num1 += 2) {
+                    evenNumberText += num1 + ", ";
+                }
+                txtMySequence.innerHTML = evenNumberText.slice(0, -2);
+
+            } else if (mySequence == "odd") {
+                let oddNumberText = "";
+                for (let num1 = 1; num1 <= 20; num1 += 2) {
+                    oddNumberText += num1 + ", ";
+                }
+                txtMySequence.innerHTML = oddNumberText.slice(0, -2)
+            } else {
+                alert('Invalid selection, please try again!');
+            }
+        }
+    </script> 
+    <div class="link-card"><a href="../index.html" class="return-home">Return</a></div>
+</body>
+</html>
