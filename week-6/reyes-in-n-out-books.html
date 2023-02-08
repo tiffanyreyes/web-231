@@ -1,0 +1,125 @@
+<!--========================== Exercise 6.2 - In-N-Out Books ==========================
+An HTML and JavaScript project.
+
+Code referenced from w3schools 
+- https://www.w3schools.com/html/html_tables.asp
+- https://www.w3schools.com/js/js_objects.asp -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WEB 231 - Enterprise JavaScript I</title>
+    <link href="../site.css" type="text/css" rel="stylesheet">
+    <link href="reyes-in-n-out-books.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="app-header">Welcome to In-N-Out-Books</h1>
+    <div class="card-select">
+        <div class="card-title">My Favorites</div>
+        <p>
+        <label>Choose a listing:</label>
+        <select class="drop-down-menu" name="types" id="favoriteList">
+            <option value="select">--Select--</option>
+            <option value="books">Top 3 Favorite Books</option>
+            <option value="authors">Top 3 Favorite Authors</option>
+        </select>
+        </p>
+        <button id="btnDisplayListing" onclick="myFunction()">Display Listing</button>
+    </div>
+    <div class="link-card"><a href="../index.html" class="return-home">Return</a></div>
+    <br>
+    <div id="favorite-books" class="card-favorites">
+        <div class="card-title">Top 3 Favorite Books</div>
+        <table class="favorite-table">
+            <tr>
+                <th>ISBN</th>
+                <th>Title</th>
+                <th>Pages</th>
+            </tr>
+            <tr>
+                <td id="txtAWintersPromiseISBN"></td>
+                <td id="txtAWintersPromiseTitle"></td>
+                <td id="txtAWintersPromisePages"></td>
+            </tr>
+            <tr>
+                <td id="txtAMidnightLibraryISBN"></td>
+                <td id="txtAMidnightLibraryTitle"></td>
+                <td id="txtAMidnightLibraryPages"></td>
+            </tr>
+            <tr>
+                <td id="txtScytheISBN"></td>
+                <td id="txtScytheTitle"></td>
+                <td id="txtScythePages"></td>
+            </tr>
+        </table>
+    </div>
+    <div id="favorite-authors" class="card-favorites">
+        <div class="card-title">Top 3 Favorite Authors</div>
+        <table class="favorite-table">
+            <tr>
+                <th>Name</th>
+                <th>Genre</th>
+            </tr>
+            <tr>
+                <td id="txtChristelleDabosName"></td>
+                <td id="txtChristelleDabosGenre"></td>
+            </tr>
+            <tr>
+                <td id="txtSarahJMaasName"></td>
+                <td id="txtSarahJMaasGenre"></td>
+            </tr>
+            <tr>
+                <td id="txtJojoMoyesName"></td>
+                <td id="txtJojoMoyesGenre"></td>
+            </tr>
+        </table>
+    </div>
+        <script>
+            const favoriteBooks = document.getElementById("favorite-books");
+            const favoriteAuthors = document.getElementById("favorite-authors");
+
+            favoriteBooks.style.display = "none";
+            favoriteAuthors.style.display = "none";
+
+            const book1 = {ISBN: 9781787701809, Title: "A Winter's Promise", Pages: 492};
+            const book2 = {ISBN: 9780525559474, Title:"A Midnight Library", Pages: 304};
+            const book3 = {ISBN: 9781543617948, Title: "Scythe", Pages: 443};
+    
+            const author1 = {Name: "Christelle Dabos", Genre: "Fantasy"};
+            const author2 = {Name: "Sarah J. Maas", Genre: "Fantasy"};
+            const author3 = {Name: "Jojo Moyes", Genre: "Realistic fiction, romance"};
+            
+            document.getElementById("txtAWintersPromiseISBN").innerHTML = book1.ISBN;
+            document.getElementById("txtAWintersPromiseTitle").innerHTML = book1.Title;
+            document.getElementById("txtAWintersPromisePages").innerHTML = book1.Pages;
+            document.getElementById("txtAMidnightLibraryISBN").innerHTML = book2.ISBN;
+            document.getElementById("txtAMidnightLibraryTitle").innerHTML = book2.Title;
+            document.getElementById("txtAMidnightLibraryPages").innerHTML = book2.Pages;
+            document.getElementById("txtScytheISBN").innerHTML = book3.ISBN;
+            document.getElementById("txtScytheTitle").innerHTML = book3.Title;   
+            document.getElementById("txtScythePages").innerHTML = book3.Pages;
+
+            document.getElementById("txtChristelleDabosName").innerHTML = author1.Name;   
+            document.getElementById("txtChristelleDabosGenre").innerHTML = author1.Genre; 
+            document.getElementById("txtSarahJMaasName").innerHTML = author2.Name;   
+            document.getElementById("txtSarahJMaasGenre").innerHTML = author2.Genre; 
+            document.getElementById("txtJojoMoyesName").innerHTML = author3.Name;   
+            document.getElementById("txtJojoMoyesGenre").innerHTML = author3.Genre; 
+                
+            function myFunction() {
+                const choice = document.getElementById("favoriteList").value;
+
+                if (choice == "books") {
+                    favoriteBooks.style.display = "block";
+                    favoriteAuthors.style.display = "none";
+                } else if (choice == "authors") {
+                    favoriteBooks.style.display = "none";
+                    favoriteAuthors.style.display = "block";
+                } else if (choice == "select") {
+                    favoriteBooks.style.display = "none";
+                    favoriteAuthors.style.display = "none";
+                }
+             }
+        </script>
+</body>
+</html>
