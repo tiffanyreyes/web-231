@@ -1,0 +1,68 @@
+body {
+    font-family: 'Oswald', Verdana, Arial, sans-serif;
+    font-size: 28px;
+}
+
+h1.app-header {
+    border: none;
+    text-align: center;
+    font-size: 28px;
+}
+
+button {
+    background-color: #4F3674;
+    border: none;
+    color: white;
+    padding: 15px 64px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.card-listings, .card-products, .card-services, .card-employees {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: auto;
+    width: 700px;
+    padding: 20px;
+}
+
+.services-table, .products-table, .employees-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 30px;
+    height: 28px;
+    font-size: 28px;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    text-align: left;
+    background-color: #4F3674;
+    color: white;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding-left: 12px;
+    text-align: left;
+}
+
+tr:hover {
+    background-color: #D6A800;
+    color: #4F3674;
+    cursor: pointer;
+}
+
+div.card-title {
+    text-align: center;
+    color: #3C275A;
+}
+
+.link-card {
+    margin: auto;
+    width: 740px;
+    padding-top: 20px;
+}
