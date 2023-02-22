@@ -1,0 +1,63 @@
+<!--========================== Exercise 8.2 - Alphabet Game ==========================
+An HTML and JavaScript project.
+
+Code referenced from w3schools 
+- https://www.w3schools.com/js/js_arrays.asp -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WEB 231 - Enterprise JavaScript I</title>
+    <link href="../site.css" type="text/css" rel="stylesheet">
+    <link href="reyes-alphabet-game.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="app-header">Welcome to the Alphabet Game!</h1>
+    <div class="card-alphabet">
+        <div class="card-title">Alphabet Number Form</div>
+            <p>
+                <label>Alphabet Letter Position:</label>
+                <input id="txtPosition" type="text">
+            </p>
+        <button id="btnFindLetter" onclick="myFunction()">Find Letter</button>
+    </div>
+    <div class="link-card"><a href="../index.html" class="return-home">Return</a></div>
+    <br>
+    <div id="alphabet" class="card-letters">
+        <div class="card-title">Letters in the Alphabet</div>
+        <span id="txtalphabetOutput"></span>
+    </div>
+    <br>
+    <div id="pos" class="card-results">
+        <div class="card-title">Results</div>
+        <span id="txtMyResults"></span>
+    </div>
+
+    <script>
+        const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+        let alphabetOutput = "";
+        // alphabet.style.display = "block";
+        // txtMyResults.style.display = "none";
+
+        for (const index in alphabet) {
+            alphabetOutput += alphabet[index] + ", ";
+        }
+        
+        document.getElementById("txtalphabetOutput").innerHTML = alphabetOutput.slice(0, -2);
+        const txtMyResults = document.getElementById("txtMyResults");
+      
+        function myFunction() {
+                const pos = document.getElementById("txtPosition").value;
+                const letter = alphabet[pos - 1];
+                if(letter === undefined) {
+                    txtMyResults.style.display = "block";
+                    txtMyResults.innerHTML = "There are not " + pos + " letters in the alphabet.";
+                }
+                else {
+                    txtMyResults.style.display = "block";
+                    txtMyResults.innerHTML = letter + " is at position " + pos + " in the alphabet."; 
+                }
+            }
+    </script>
+</body>
+</html>
